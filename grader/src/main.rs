@@ -25,7 +25,7 @@ async fn main() -> anyhow::Result<()> {
     tracing_subscriber::fmt::init();
 
     let db_url = std::env::var("DATABASE_URL")
-        .unwrap_or_else(|_| "postgres://postgres:postgres@localhost:5432/api_trainer".into());
+        .expect("DATABASE_URL must be set");
 
     let db = PgPoolOptions::new()
         .max_connections(5)

@@ -54,7 +54,7 @@ serde_json = "1"
     // Pick a free port, spawn the student's server.
     let port = free_port()?;
     let db_url = std::env::var("DATABASE_URL")
-        .unwrap_or_else(|_| "postgres://postgres:postgres@localhost:5432/api_trainer".into());
+        .expect("DATABASE_URL must be set");
 
     let bin = proj.join("target/debug/submission");
     let mut child = Command::new(&bin)
