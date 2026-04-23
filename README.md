@@ -2,6 +2,8 @@
 
 A platform where students learn backend engineering by writing real HTTP API handlers — not toy programs, not DSA puzzles. Write an Axum server, submit it, get it compiled and tested against a live PostgreSQL database.
 
+![Dashboard](assets/images/dashboard.png)
+
 ## What it is
 
 Students pick a ticket, read a spec, implement a working Axum HTTP server, and submit. The grader spins up their server, fires real HTTP requests at it, and checks the responses. Same loop real engineers do every day.
