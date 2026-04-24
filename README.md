@@ -71,11 +71,31 @@ Supports multiple languages in future. Currently: Rust (Axum).
 
 ## Prerequisites
 
-- Rust (stable)
-- PostgreSQL running locally
-- Node.js 18+ (for the web UI)
+- [Docker](https://docs.docker.com/get-docker/) or [Podman](https://podman.io/getting-started/installation) with Compose
 
-## Setup
+No Rust, PostgreSQL, or Node.js required — everything runs inside containers.
+
+## Setup (Recommended)
+
+```sh
+# Docker
+docker compose up --build
+
+# Podman
+podman compose up --build
+```
+
+Open <http://localhost:5173> once you see:
+
+```text
+grader-1  | INFO grader: grader listening on 0.0.0.0:3000
+```
+
+First build takes a few minutes (compiling Rust). Subsequent starts are fast — build cache is persisted in a volume.
+
+### Manual setup (without Docker)
+
+Prerequisites: Rust (stable 1.88+), PostgreSQL, Node.js 18+
 
 ```sh
 # 1. Create the database
